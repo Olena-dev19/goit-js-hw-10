@@ -14,9 +14,27 @@
       <div class="container">
 
         <load src="./partials/back-link.html" />
-        <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> 
-        </h1>
+        <form class="form">
+          <label class="formlabel">
+            Delay (ms)
+            <input type="number" name="delay" required />
+          </label>
+        
+          <fieldset class="stateradio">
+            <legend>State</legend>
+            <label class="stateinput">
+              <input  type="radio" name="state" value="fulfilled" required />
+              Fulfilled
+            </label>
+            <label class="stateinput">
+              <input type="radio" name="state" value="rejected" required />
+              Rejected
+            </label>
+          </fieldset>
+        
+          <button class="btncreate" type="submit">Create notification</button>
+        </form>
+
        
       </div>
     </main>
