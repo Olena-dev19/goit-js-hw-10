@@ -21,15 +21,15 @@ fieldset.addEventListener('change', (e) => {
 });
 
 
-formEl.addEventListener('submit', (e)=>{
+formEl.addEventListener('submit', (e) => {
     e.preventDefault();
     userDelay = Number(inputEl.value);
 
 
-    makePromise(userDelay, selectedValue )
+    makePromise(userDelay, selectedValue)
 
-    .then(value => iziToast.success({ message: (value)}))
-    .catch(error => iziToast.error({ message: (error) }))
+        .then(selectedValue => iziToast.success({message: `✅ Fulfilled promise in ${userDelay}ms`}))
+    .catch(error => iziToast.error({ message: `❌ Rejected promise in ${userDelay}ms` }))
     
     formEl.reset();
 })
@@ -41,9 +41,9 @@ const makePromise = (delay, selectedValue) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (selectedValue === 'fulfilled') {
-                resolve(`✅ Fulfilled promise in ${delay}ms`)
+                resolve(delay)
             } else {
-                reject(`❌ Rejected promise in ${delay}ms`)
+                reject(delay)
             }
         }, delay)
     })
