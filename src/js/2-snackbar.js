@@ -23,7 +23,7 @@ fieldset.addEventListener('change', (e) => {
 
 formEl.addEventListener('submit', (e)=>{
     e.preventDefault();
-    userDelay = inputEl.value;
+    userDelay = Number(inputEl.value);
 
 
     makePromise(userDelay, selectedValue )
